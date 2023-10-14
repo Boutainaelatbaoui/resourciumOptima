@@ -40,9 +40,9 @@ Open persistence.xml in a text editor.
 
 Update the database connection properties to match your database configuration:
     ```XML
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://your-database-host:your-database-port/your-database-name"/>
-      <property name="javax.persistence.jdbc.user" value="your-database-username"/>
-      <property name="javax.persistence.jdbc.password" value="your-database-password"/>
+    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://your-database-host:your-database-port/your-database-name"/>
+    <property name="javax.persistence.jdbc.user" value="your-database-username"/>
+    <property name="javax.persistence.jdbc.password" value="your-database-password"/>
 
 Replace the placeholders with your actual database details.
 
