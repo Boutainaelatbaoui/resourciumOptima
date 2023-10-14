@@ -38,11 +38,13 @@ Locate the persistence.xml file: It is typically found in the src/main/resources
 
 Open persistence.xml in a text editor.
 
-Update the database connection properties to match your database configuration:
-    ```XML
-    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://your-database-host:your-database-port/your-database-name"/>
-    <property name="javax.persistence.jdbc.user" value="your-database-username"/>
-    <property name="javax.persistence.jdbc.password" value="your-database-password"/>
+### Configure `persistence.xml`
+
+Update the database connection properties in `persistence.xml` to match your database configuration. Open `persistence.xml` in a text editor and make the following changes:
+
+         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://your-database-host:your-database-port/your-database-name"/>
+         <property name="javax.persistence.jdbc.user" value="your-database-username"/>
+         <property name="javax.persistence.jdbc.password" value="your-database-password"/>
 
 Replace the placeholders with your actual database details.
 
