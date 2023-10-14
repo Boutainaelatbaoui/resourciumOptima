@@ -39,10 +39,11 @@ Locate the persistence.xml file: It is typically found in the src/main/resources
 Open persistence.xml in a text editor.
 
 Update the database connection properties to match your database configuration:
-```XML
-  <property name="javax.persistence.jdbc.url" value="jdbc:mysql://your-database-host:your-database-port/your-database-name"/>
-  <property name="javax.persistence.jdbc.user" value="your-database-username"/>
-  <property name="javax.persistence.jdbc.password" value="your-database-password"/>
+    ```XML
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://your-database-host:your-database-port/your-database-name"/>
+      <property name="javax.persistence.jdbc.user" value="your-database-username"/>
+      <property name="javax.persistence.jdbc.password" value="your-database-password"/>
+
 Replace the placeholders with your actual database details.
 
 Save the persistence.xml file.
@@ -53,22 +54,22 @@ Use your chosen Java EE application server (WildFly, Payara, GlassFish, or Apach
 Access the application via the provided URL from your application server.
 
 ### Technologies
-Resourcium Optima JEE leverages a stack of modern technologies:
+#### Resourcium Optima JEE leverages a stack of modern technologies:
 
-Java EE (Enterprise Edition): A set of specifications extending Java SE for enterprise applications.
+#### Java EE (Enterprise Edition): A set of specifications extending Java SE for enterprise applications.
 
-Java Persistence API (JPA): A Java specification for managing data between Java objects and relational databases.
+#### Java Persistence API (JPA): A Java specification for managing data between Java objects and relational databases.
 
-Maven: A build automation tool for managing project dependencies.
+#### Maven: A build automation tool for managing project dependencies.
 
-Servlets: Java classes to extend the capabilities of servers hosting applications.
+#### Servlets: Java classes to extend the capabilities of servers hosting applications.
 
-JavaServer Pages (JSP): A technology for creating web pages based on dynamic content.
+#### JavaServer Pages (JSP): A technology for creating web pages based on dynamic content.
 
-Apache Tomcat: A popular servlet container with Java EE support.
+#### Apache Tomcat: A popular servlet container with Java EE support.
 
-Git: A distributed version control system used for tracking changes in source code during development.
+#### Git: A distributed version control system used for tracking changes in source code during development.
 
-MySQL (or your preferred database system): A relational database management system.
+#### MySQL (or your preferred database system): A relational database management system.
 
 Resourcium Optima JEE is designed to provide seamless talent and equipment management capabilities for enterprises, with robust and scalable technologies at its core.
