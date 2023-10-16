@@ -18,70 +18,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
-<div class="" id="app">
-    <nav class="navbar navbar-expand-lg navbar-white bg-white d-flex navbar-welcome py-2">
-        <div class="container">
-            <a class="navbar-brand mx-5 pe-5" href="">
-                <span class="logo">
-                    <span class="" style="color: #266ef5 !important;">HR</span> Zone
-                </span>
-            </a>
-            <button class="navbar-toggler mx-4" type="button" data-bs-toggle="collapse" data-bs-target="#menuItems" aria-controls="menuItems" aria-expanded="false" aria-label="Toggle Navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuItems">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav ps-5 mt-2 mt-lg-0 ms-5 ms-lg-0 text-decoration-none fs-5">
-                    <li class="nav-item">
-                        <a class="nav-link nav-app text-dark me-2" href="">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-app text-dark me-2" href="">Our team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-app text-dark me-2" href="">Features</a>
-                    </li>
-                </ul>
+<jsp:include page="header.jsp" />
 
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto me-4">
-                    <!-- Authentication Links -->
-                    <li class="nav-item">
-                        <a class="nav-link nav-user px-3 btn btn-one me-3 mt-2 mt-lg-0 ms-4 ms-lg-0" href="">Login</a>
-                    </li>
+<!-- Your main page content goes here -->
 
-                    <li class="nav-item">
-                        <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="">Register</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="py-4">
-    </main>
-</div>
-<footer class="text-center text-lg-start footer-one mt-auto">
-    <div class="container d-flex justify-content-center py-5">
-        <button type="button" class="btn btn-footer btn-lg btn-floating mx-2">
-            <i class="bi bi-facebook text-center"></i>
-        </button>
-        <button type="button" class="btn btn-footer btn-lg btn-floating mx-2">
-            <i class="bi bi-instagram text-center"></i>
-        </button>
-        <button type="button" class="btn btn-footer btn-lg btn-floating mx-2">
-            <i class="bi bi-twitter text-center"></i>
-        </button>
-        <button type="button" class="btn btn-footer btn-lg btn-floating mx-2">
-            <i class="bi bi-youtube text-center"></i>
-        </button>
-    </div>
-    <!-- Copyright -->
-    <div class="text-center p-3 footer-two">
-        © 2023 Copyright:
-        <a class="text-decoration-none fw-bolder text-dark" href="https://youcode.ma/">YouCode</a>
-    </div>
-    <!-- Copyright -->
-</footer>
+<jsp:include page="footer.jsp" />
 </body>
 </html>
