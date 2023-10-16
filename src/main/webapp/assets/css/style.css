@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Condensed&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #ffffff !important;
+}
+
+.logo{
+    color: #0c2b3c;
+    font-size: 35px;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.logo-img{
+    width: 50px !important;
+    height: 48px !important;
+}
+
+.navbar-welcome{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.btn-one{
+    background-color: #266ef5 !important;
+    color: #eeeeee !important;
+    border-radius: 10px !important;
+}
+
+.navbar-toggler{
+    background-color: #eeeeee;
+}
+
+.nav-user{
+    color: #FFFFFF !important;
+    font-weight: bolder;
+    width: fit-content !important;
+}
+
+.dropdown-menu{
+    background-color: #eeeeee !important;
+    font-weight: bold;
+    border-radius: 10px !important;
+}
+
+.dropdown-menu a:hover{
+    background-color: #0c2b3c !important;
+    color: #FFFFFF !important;
+}
+
+.footer-one{
+    background-color: #f9f9f9;
+    border-color: black;
+    border-width: 2px !important;
+}
+
+.footer-two{
+    background-color: #f2f3f5 !important;
+}
