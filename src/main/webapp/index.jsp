@@ -20,7 +20,7 @@
 <body class="d-flex flex-column min-vh-100">
 <jsp:include page="header.jsp" />
 
-<!-- Your main page content goes here -->
+hellooo
 
 <jsp:include page="footer.jsp" />
 </body>
