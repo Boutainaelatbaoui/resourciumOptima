@@ -44,7 +44,7 @@
                                         <h5 class="login-detail">Create an account</h5>
                                     </div>
                                 </div>
-                                <form method="POST" action="" class="register-form">
+                                <form method="POST" action="${pageContext.request.contextPath}/register" class="register-form">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Full name</label>
                                         <div class="">
