@@ -46,13 +46,13 @@
                     <div class="mb-3">
                       <label for="email" class="form-label">Email address</label>
                       <div class="">
-                        <input id="email" type="email" class="form-control" name="email" value="example@gmail.com" autocomplete="email" autofocus>
+                        <input id="email" type="email" class="form-control" name="email" autocomplete="email" autofocus>
                       </div>
                     </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
                       <div class="">
-                        <input id="password" type="password" class="form-control" name="password" value="********" autocomplete="current-password">
+                        <input id="password" type="password" class="form-control" name="password" autocomplete="current-password">
                       </div>
                     </div>
                     <div class="mb-3">
@@ -74,7 +74,7 @@
                     </div>
                   </form>
                   <p class="mb-3 text-center text-form fs-6 mb-3">Don't have an account? <button class="btn main-btn btn-sm">
-                    <a href="" class="text-decoration-none text-white text-center">Sign Up</a></button></p>
+                    <a href="register.jsp" class="text-decoration-none text-white text-center">Sign Up</a></button></p>
                 </div>
               </div>
               <div class="col d-none d-lg-block">

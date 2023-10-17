@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-white bg-white d-flex navbar-welcome py-2">
   <div class="container">
-    <a class="navbar-brand mx-5 pe-5" href="">
+    <a class="navbar-brand mx-5 pe-5" href="index.jsp">
                 <span class="logo">
                     <span class="" style="color: #266ef5 !important;">HR</span> Zone
                 </span>
@@ -30,7 +30,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="">Register</a>
+          <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="register.jsp">Register</a>
         </li>
       </ul>
     </div>
