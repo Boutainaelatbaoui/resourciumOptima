@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-white bg-white d-flex navbar-welcome py-2">
   <div class="container">
-    <a class="navbar-brand mx-5 pe-5" href="../index.jsp">
+    <a class="navbar-brand mx-5 pe-5" href="${pageContext.request.contextPath}/index.jsp">
                 <span class="logo">
                     <span class="" style="color: #266ef5 !important;">HR</span> Zone
                 </span>
@@ -26,11 +26,11 @@
       <ul class="navbar-nav ms-auto me-4">
         <!-- Authentication Links -->
         <li class="nav-item">
-          <a class="nav-link nav-user px-3 btn btn-one me-3 mt-2 mt-lg-0 ms-4 ms-lg-0" href="./views/login.jsp">Login</a>
+          <a class="nav-link nav-user px-3 btn btn-one me-3 mt-2 mt-lg-0 ms-4 ms-lg-0" href="${pageContext.request.contextPath}/views/login.jsp">Login</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="./views/register.jsp">Register</a>
+          <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="${pageContext.request.contextPath}/views/register.jsp">Register</a>
         </li>
       </ul>
     </div>

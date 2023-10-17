@@ -74,7 +74,7 @@
                                     </div>
                                 </form>
                                 <div class="login-mb">
-                                    <p class="text-center text-form">Already have an account? <button class="btn second-btn btn-sm">
+                                    <p class="text-center text-form">Already have an account? <button class="btn btn main-btn btn-sm">
                                         <a href="login.jsp" class="text-decoration-none text-white text-center">Login</a></button></p>
                                 </div>
                             </div>

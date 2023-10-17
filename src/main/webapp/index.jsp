@@ -30,7 +30,7 @@
                 <div class="col-md-8 mt-4 mt-md-0">
                     <h2 class="mb-4 text-4xl fw-extrabold text-gray-900 dark:text-white">Empower Your Team and Achieve Success</h2>
                     <p class="mb-6 text-gray-500 md:text-lg dark:text-gray-400">Unlock the potential for excellence in your team's collaboration. Suspendisse in turpis at nulla cursus vestibulum. Etiam non dui vel neque blandit feugiat. Empower your team to achieve greatness and foster efficient teamwork. Suspendisse in turpis at nulla cursus vestibulum. Etiam non dui vel neque blandit feugiat.</p>
-                    <a href="views/login.jsp" class="btn btn-primary btn-lg rounded-pill">
+                    <a href="${pageContext.request.contextPath}/views/login.jsp" class="btn btn-primary btn-lg rounded-pill">
                         Get started
                         <svg class="ms-2" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -45,7 +45,13 @@
         <div class="container py-8 px-4 d-flex gap-16 items-center">
             <div class="col-6 font-light text-gray-500 sm:text-lg dark:text-gray-400 mt-5 pt-5">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Revolutionize Talent and Equipment Management</h2>
-                <p class="mb-4">Introducing an advanced enterprise-level solution designed to streamline talent and equipment management processes within organizations. This powerful tool empowers HR managers and supervisors with an intuitive interface to efficiently coordinate and optimize tasks related to both employees and equipment.</p
+                <p class="mb-4">Introducing an advanced enterprise-level solution designed to streamline talent and equipment management processes within organizations. This powerful tool empowers HR managers and supervisors with an intuitive interface to efficiently coordinate and optimize tasks related to both employees and equipment.</p>
+                <a href="#" class="btn btn-primary btn-lg rounded-pill">
+                    About us
+                    <svg class="ms-2" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
             </div>
             <div class="col-6">
                 <div class="row g-4">
