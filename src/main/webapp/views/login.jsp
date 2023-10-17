@@ -42,7 +42,7 @@
                       <h5 class="login-detail">Please Enter Your Details</h5>
                     </div>
                   </div>
-                  <form method="POST" action="">
+                  <form method="POST" action="${pageContext.request.contextPath}/login">
                     <div class="mb-3">
                       <label for="email" class="form-label">Email address</label>
                       <div class="">
