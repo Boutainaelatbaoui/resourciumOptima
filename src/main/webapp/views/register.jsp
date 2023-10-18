@@ -22,6 +22,13 @@
 
 <main class="py-4">
     <div class="container container container-log h-100">
+        <% String error = (String) request.getSession().getAttribute("error"); %>
+        <% if (error != null) { %>
+        <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+            <strong>Warning!</strong> <%= error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
                 <div class="card-form mb-3 m-auto">

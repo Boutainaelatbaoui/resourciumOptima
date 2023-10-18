@@ -23,6 +23,15 @@
 <main class="py-4">
   <div class="vh-100">
     <div class="container container-log h-100">
+      <%
+        String successMessage = (String) request.getSession().getAttribute("successMessage");
+      %>
+      <% if (successMessage != null) { %>
+      <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+        <strong>Success!</strong> <%= successMessage %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
           <div class="card-form mb-3 m-auto">
