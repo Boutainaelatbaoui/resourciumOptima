@@ -2,6 +2,8 @@ package com.example.companymanagement.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Department {
     @Id
@@ -10,6 +12,17 @@ public class Department {
     private String name;
     private String location;
     private String description;
+
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employees;
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 
     public int getDepartment_id() {
         return department_id;

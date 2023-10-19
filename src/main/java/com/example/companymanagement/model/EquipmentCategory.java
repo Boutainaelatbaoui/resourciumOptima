@@ -2,12 +2,25 @@ package com.example.companymanagement.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class EquipmentCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int category_id;
     private String name;
+
+    @OneToMany(mappedBy = "equipmentCategory")
+    private List<Equipment> equipmentList;
+
+    public List<Equipment> getEquipmentList() {
+        return equipmentList;
+    }
+
+    public void setEquipmentList(List<Equipment> equipmentList) {
+        this.equipmentList = equipmentList;
+    }
 
     public int getCategory_id() {
         return category_id;

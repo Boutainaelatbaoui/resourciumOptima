@@ -2,7 +2,7 @@ package com.example.companymanagement.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.util.*;
 
 @Entity
 public class Equipment {
@@ -14,6 +14,18 @@ public class Equipment {
     private int quantity;
     private Date date_of_purchase;
     private Date date_of_maintenance;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private EquipmentCategory equipmentCategory;
+
+    public EquipmentCategory getEquipmentCategory() {
+        return equipmentCategory;
+    }
+
+    public void setEquipmentCategory(EquipmentCategory equipmentCategory) {
+        this.equipmentCategory = equipmentCategory;
+    }
 
     public int getEquipment_id() {
         return equipment_id;

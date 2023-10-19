@@ -26,6 +26,30 @@ public class Employee {
     @Column(name = "salary")
     private double salary;
 
+    @ManyToOne
+    @JoinColumn(name = "title_id")
+    private JobTitle jobTitle;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+
+    public JobTitle getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(JobTitle jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     public Long getId() {
         return id;
     }

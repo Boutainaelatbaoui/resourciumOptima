@@ -35,29 +35,21 @@
 <body class="d-flex flex-column min-vh-100">
 <jsp:include page="dashHeader.jsp" />
 <jsp:include page="dashSide.jsp" />
-<main class="py-5 my-3 container">
-    <div class="">
-        <div class="card-header">
-            <button id="dropdownButton" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-                <span class="sr-only">Open dropdown</span>
-                <svg class="bi bi-three-dots" width="16" height="3" fill="currentColor" viewBox="0 0 16 3">
-                    <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
-                </svg>
-            </button>
-            <!-- Dropdown menu -->
-            <div class="dropdown-menu" id="dropdown">
-                <a class="dropdown-item" href="#">Edit</a>
-                <a class="dropdown-item" href="#">Export Data</a>
-                <a class="dropdown-item text-danger" href="#">Delete</a>
-            </div>
-        </div>
-        <div class="card-body text-center">
-            <img class="w-24 h-24 mb-3 rounded-circle shadow-lg" src="../assets/img/A%20female%20office.png" alt="image">
-            <h5 class="mb-1 text-xl font-medium">Bonnie Green</h5>
-            <span class="text-sm text-muted">Visual Designer</span>
-            <div class="mt-4">
-                <a href="#" class="btn btn-primary btn-lg">Add friend</a>
-                <a href="#" class="btn btn-secondary btn-lg">Message</a>
+<main class="mt-3 mb-5">
+    <div class="main-dash">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-5">
+            <div class="col">
+                <div class="card card-menu btn bg-white mb-3 p-0">
+                    <div class="card-body text-center">
+                        <img class="mb-3 rounded-circle shadow-lg" src="../assets/img/A%20female%20office.png" width="100" height="100" alt="image">
+                        <h5 class="mb-1 text-xl font-medium">Bonnie Green</h5>
+                        <span class="text-sm text-muted">Visual Designer</span>
+                        <div class="mt-4">
+                            <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm"><i class="bi bi-pencil-square users-icon text-white me-2"></i>Update</a>
+                            <a href="#" class="btn btn-sm btn-danger px-4 text-sm"><i class="bi bi-trash3 users-icon text-white me-2"></i>Delete</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

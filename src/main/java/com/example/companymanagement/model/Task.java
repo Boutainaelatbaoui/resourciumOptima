@@ -14,6 +14,18 @@ public class Task {
     private Date deadline;
     private String responsibilities;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee assignedEmployee;
+
+    public Employee getAssignedEmployee() {
+        return assignedEmployee;
+    }
+
+    public void setAssignedEmployee(Employee assignedEmployee) {
+        this.assignedEmployee = assignedEmployee;
+    }
+
     public int getTask_id() {
         return task_id;
     }
