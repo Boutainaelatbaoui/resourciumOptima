@@ -44,13 +44,13 @@ body{
 }
 
 .dropdown-menu{
-    background-color: #eeeeee !important;
+    background-color: #f9f9f9 !important;
     font-weight: bold;
     border-radius: 10px !important;
 }
 
 .dropdown-menu a:hover{
-    background-color: #0c2b3c !important;
+    background-color: #266ef5 !important;
     color: #FFFFFF !important;
 }
 
@@ -93,8 +93,190 @@ body{
     color: #1d3557;
 }
 
+.home-text{
+    font-family: 'Poppins', sans-serif;
+    color: #1f202b !important;
+}
+
+.home-textone{
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Cookie', cursive;
+    font-size: 68px !important;
+}
+
+.home-subtext{
+    font-family: 'Playball', cursive;
+}
+
+.card-menu{
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    background-color: #f3f4f6 !important;
+    border-radius: 15px !important;
+}
+
+.header-auth{
+    background-color: #ced8d9 !important;
+}
+
+.body-auth{
+    background-color: #f3f4f6 !important;
+}
+
+.btn-auth{
+    background-color: #0c2b3c !important;
+    color: #eeeeee !important;
+}
+
+@media (max-width: 600px){
+    .logo {
+        font-size: 30px;
+    }
+}
+
+.navbar-dash{
+    background-color: #1f202b !important;
+    border-bottom-right-radius: 70px !important;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+:root {
+    --topNavbarHeight: 70px !important;
+}
+
+.sidebar-nav {
+    --bs-offcanvas-width: 220px !important;
+    top: var(--topNavbarHeight) !important;
+    background-color: #1f202b!important;
+    font-weight: bolder !important;
+    border-bottom-right-radius: 60px !important;
+}
+
+.sidebar-text {
+    font-size: 16px !important;
+}
+
+.offcanvas-backdrop.show {
+    display: block !important;
+}
+
+.close-offcanvas {
+    display: block;
+}
+
+.main-dash {
+    margin: 125px 10px 0 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-backdrop{
+    display: none !important;
+}
+
+.welcome-card {
+    background-color: #eeeeee !important ;
+}
+
+.bx-shadow{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.card-style{
+    z-index: -1;
+    position: absolute;
+    width: 55%;
+    height: 200%;
+    background-color: #ced8d9;
+    transform: skewX(43deg);
+}
+
+.btn-modal{
+    background-color: #0c2b3c !important;
+    border-radius: 10px !important;
+    color: #ced8d9 !important;
+}
+
+.btn-two{
+    color: #0c2b3c !important;
+}
+
 .card-form{
     background-color: #f2f3f5 !important;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px !important;
+}
+
+.card-text{
+    color: #1f202b !important;
+    font-weight: bolder !important;
+}
+
+.modal-title{
+    color: #1d3557 !important;
+}
+
+#data-table_wrapper{
+    margin-top: 50px !important;
+    font-family: 'Poppins', sans-serif;
+    color: #1d3557 !important;
+    font-weight: bolder !important;
+}
+
+.dataTables_wrapper .dataTables_filter input{
+    border-radius: 10px !important;
+}
+
+.dataTables_scrollHeadInner{
+    margin-top: 20px;
+}
+
+thead{
+    background-color: #0c2b3c;
+    color: #edf2f4 !important;
+}
+
+table{
+    border-radius: 65px !important;
+}
+
+.logo-dash{
+    color: #eeeeee !important;
+}
+
+@media (min-width: 992px) {
+    .sidebar-nav {
+        transform: none !important;
+        visibility: visible !important;
+        border-bottom-right-radius: 60px !important;
+        box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        top: var(--topNavbarHeight) !important;
+        height: calc(100% - var(--topNavbarHeight)) !important;
+    }
+    .close-offcanvas {
+        display: none;
+    }
+
+    .main-dash {
+        margin-left: 240px;
+    }
+
+    .height-form{
+        height: 100vh;
+    }
+}
+
+.btn-allmenu{
+    background-color: #0c2b3c !important;
+    color: #edf2f4 !important;
+    font-family: 'Playball', cursive;
+    font-weight: bolder;
+    font-size: 25px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.nav-app{
+    color: #0c2b3c !important;
+    font-weight: bolder;
 }

@@ -25,13 +25,19 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        List<Employee> employees = entityManager.createQuery("SELECT e FROM Employee e WHERE e.email = :email AND e.password = :password", Employee.class)
+        List<Employee> employees = entityManager.createQuery("SELECT e FROM Employee e WHERE e.email = :email", Employee.class)
                 .setParameter("email", email)
-                .setParameter("password", password)
                 .getResultList();
 
         if (employees.size() == 1) {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+            Employee employee = employees.get(0);
+            if (employee.getPassword().equals(password)) {
+                request.getSession().setAttribute("username", employee.getFullName());
+                request.getSession().setAttribute("email", email);
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            } else {
+                response.sendRedirect(request.getContextPath() + "/views/login.jsp");
+            }
         } else {
             response.sendRedirect(request.getContextPath() + "/views/login.jsp");
         }

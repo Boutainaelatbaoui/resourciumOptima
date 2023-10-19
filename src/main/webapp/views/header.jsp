@@ -23,16 +23,41 @@
       </ul>
 
       <!-- Right Side Of Navbar -->
-      <ul class="navbar-nav ms-auto me-4">
-        <!-- Authentication Links -->
-        <li class="nav-item">
-          <a class="nav-link nav-user px-3 btn btn-one me-3 mt-2 mt-lg-0 ms-4 ms-lg-0" href="${pageContext.request.contextPath}/views/login.jsp">Login</a>
-        </li>
+      <% if (session.getAttribute("username") == null) { %>
+        <ul class="navbar-nav ms-auto me-4">
+          <!-- Authentication Links -->
+          <li class="nav-item">
+            <a class="nav-link nav-user px-3 btn btn-one me-3 mt-2 mt-lg-0 ms-4 ms-lg-0" href="${pageContext.request.contextPath}/views/login.jsp">Login</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="${pageContext.request.contextPath}/views/register.jsp">Register</a>
-        </li>
-      </ul>
+          <li class="nav-item">
+            <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="${pageContext.request.contextPath}/views/register.jsp">Register</a>
+          </li>
+        </ul>
+      <% } %>
+
+      <% if (session.getAttribute("username") != null) { %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav d-flex ms-auto">
+          <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link nav-dash dropdown-toggle nav-user btn btn-two me-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="rounded-circle me-1" src="assets/img/A%20female%20office.png" alt="user photo" width="45" height="45">
+                <%= session.getAttribute("username") %>
+              </a>
+            <div class="dropdown-menu dropdown-menu-center ms-4 ms-lg-0">
+                <span class="block text-sm text-gray-900 ms-4"><%= session.getAttribute("username") %></span>
+              <hr>
+              <a class="dropdown-item" href="<%= request.getContextPath() %>/views/dashboard.jsp">Dashboard</a>
+              <a class="dropdown-item" href="<%= request.getContextPath() %>/editProfile">
+                Edit Profile
+              </a>
+              <a class="dropdown-item" href="<%= request.getContextPath() %>/changePassword">Change Password</a>
+              <a class="dropdown-item" href="<%= request.getContextPath() %>/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <% } %>
     </div>
   </div>
 </nav>
