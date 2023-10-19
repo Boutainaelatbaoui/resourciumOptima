@@ -1,6 +1,7 @@
 package com.example.companymanagement.servlet;
 
 import com.example.companymanagement.model.Employee;
+import com.example.companymanagement.model.JobTitle;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -51,11 +52,13 @@ public class RegistrationServlet extends HttpServlet {
             return;
         }
 
+        JobTitle jobTitle = entityManager.find(JobTitle.class, 1L);
 
         Employee newUser = new Employee();
         newUser.setFullName(fullName);
         newUser.setEmail(email);
         newUser.setPassword(password);
+        newUser.setJobTitle(jobTitle);
 
         entityManager.getTransaction().begin();
         entityManager.persist(newUser);
