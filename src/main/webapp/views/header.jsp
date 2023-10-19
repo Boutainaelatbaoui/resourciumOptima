@@ -52,7 +52,10 @@
                 Edit Profile
               </a>
               <a class="dropdown-item" href="<%= request.getContextPath() %>/changePassword">Change Password</a>
-              <a class="dropdown-item" href="<%= request.getContextPath() %>/logout">Logout</a>
+              <form action="<%= request.getContextPath() %>/logout" method="get">
+                <input type="hidden" name="logout" value="true">
+                <button type="submit" class="dropdown-item">Logout</button>
+              </form>
             </div>
           </li>
         </ul>
