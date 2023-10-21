@@ -19,7 +19,7 @@ public class JobTitleRepository {
         entityManager.close();
     }
 
-    public List<JobTitle> getAllJobTitles() {
+    public List<JobTitle> AllJobTitles() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
             TypedQuery<JobTitle> query = entityManager.createQuery("SELECT j FROM JobTitle j", JobTitle.class);

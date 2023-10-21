@@ -1,6 +1,9 @@
 package com.example.companymanagement.servlet;
 
+import com.example.companymanagement.entity.Employee;
 import com.example.companymanagement.entity.JobTitle;
+import com.example.companymanagement.repository.EmployeeRepository;
+import com.example.companymanagement.service.EmployeeService;
 import com.example.companymanagement.service.JobTitleService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,20 +14,21 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "JobTitleServlet", value = "/jobTitle")
-public class JobTitleServlet extends HttpServlet {
+@WebServlet(name = "EmployeeServlet", value = "/dashboard")
+public class EmployeeServlet extends HttpServlet {
 
-    private JobTitleService jobTitleService;
+    private EmployeeService employeeService;
 
     public void init() {
-        jobTitleService = new JobTitleService();
+        employeeService = new EmployeeService();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<JobTitle> jobTitles = jobTitleService.getAllJobTitles();
+        List<Employee> employees = employeeService.getAllEmployee();
 
-        request.setAttribute("jobTitles", jobTitles);
+        request.setAttribute("employees", employees);
 
-        request.getRequestDispatcher("views/register.jsp").forward(request, response);
+        request.getRequestDispatcher("views/dashboard.jsp").forward(request, response);
     }
+
 }

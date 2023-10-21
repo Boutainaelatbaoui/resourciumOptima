@@ -1,3 +1,6 @@
+<%@ page import="com.example.companymanagement.entity.Employee" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.companymanagement.entity.JobTitle" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -18,7 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" />
 
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <!-- ================== END core-css ================== -->
     <!-- BEGIN parsley css-->
@@ -38,12 +41,19 @@
 <main class="mt-3 mb-5">
     <div class="main-dash">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-5">
+            <%
+                List<Employee> employees = (List<Employee>) request.getAttribute("employees");
+
+                if (employees != null && !employees.isEmpty()) {
+                    for (Employee employee : employees) {
+                        JobTitle jobTitle = employee.getJobTitle();
+            %>
             <div class="col">
                 <div class="card card-menu btn bg-white mb-3 p-0">
                     <div class="card-body text-center">
-                        <img class="mb-3 rounded-circle shadow-lg" src="../assets/img/A%20female%20office.png" width="100" height="100" alt="image">
-                        <h5 class="mb-1 text-xl font-medium">Bonnie Green</h5>
-                        <span class="text-sm text-muted">Visual Designer</span>
+                        <img class="mb-3 rounded-circle shadow-lg" src="./assets/img/A%20female%20office.png" width="100" height="100" alt="image">
+                        <h5 class="mb-1 text-xl font-medium"><%= employee.getFullName() %></h5>
+                        <span class="text-sm text-muted"><%= (jobTitle != null) ? jobTitle.getTitle_name() : "N/A" %></span>
                         <div class="mt-4">
                             <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm"><i class="bi bi-pencil-square users-icon text-white me-2"></i>Update</a>
                             <a href="#" class="btn btn-sm btn-danger px-4 text-sm"><i class="bi bi-trash3 users-icon text-white me-2"></i>Delete</a>
@@ -51,9 +61,25 @@
                     </div>
                 </div>
             </div>
+            <%
+                }
+            } else {
+            %>
+            <div class="col">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p>No employees to display.</p>
+                    </div>
+                </div>
+            </div>
+            <%
+                }
+            %>
         </div>
     </div>
 </main>
+
+
 
 </body>
 </html>

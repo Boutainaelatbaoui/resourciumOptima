@@ -1,20 +1,23 @@
 package com.example.companymanagement.service;
 
 import com.example.companymanagement.entity.Employee;
+import com.example.companymanagement.entity.JobTitle;
+import com.example.companymanagement.repository.EmployeeRepository;
+import com.example.companymanagement.repository.JobTitleRepository;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 public class EmployeeService {
-    private EntityManager entityManager;
+    private final EmployeeRepository employeeRepository;
 
-    public EmployeeService(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public EmployeeService() {
+        employeeRepository = new EmployeeRepository();
     }
 
-    public void createEmployee(Employee employee) {
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
-        entityManager.persist(employee);
-        transaction.commit();
+    public List<Employee> getAllEmployee() {
+        return employeeRepository.AllEmployees();
     }
+
 }
 
