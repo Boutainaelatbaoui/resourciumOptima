@@ -1,7 +1,7 @@
 package com.example.companymanagement.servlet;
 
-import com.example.companymanagement.model.Employee;
-import com.example.companymanagement.model.JobTitle;
+import com.example.companymanagement.entity.Employee;
+import com.example.companymanagement.entity.JobTitle;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -27,6 +27,7 @@ public class RegistrationServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("password_confirmation");
+        int selectedJob = Integer.parseInt(request.getParameter("jobTitle"));
 
         if (fullName == null || fullName.matches("\\d+")) {
             request.getSession().setAttribute("error", "Full name must contain only letters (no numbers or special characters).");
@@ -52,12 +53,11 @@ public class RegistrationServlet extends HttpServlet {
             return;
         }
 
-        JobTitle jobTitle = entityManager.find(JobTitle.class, 1L);
-
         Employee newUser = new Employee();
         newUser.setFullName(fullName);
         newUser.setEmail(email);
         newUser.setPassword(password);
+        JobTitle jobTitle = entityManager.find(JobTitle.class, selectedJob);
         newUser.setJobTitle(jobTitle);
 
         entityManager.getTransaction().begin();

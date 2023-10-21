@@ -1,6 +1,6 @@
 package com.example.companymanagement.service;
 
-import com.example.companymanagement.model.Employee;
+import com.example.companymanagement.entity.Employee;
 import jakarta.persistence.*;
 
 public class EmployeeService {

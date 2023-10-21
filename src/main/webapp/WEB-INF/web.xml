@@ -23,6 +23,14 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>JobTitleServlet</servlet-name>
+        <servlet-class>com.example.companymanagement.servlet.JobTitleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JobTitleServlet</servlet-name>
+        <url-pattern>/jobTitle</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.example.companymanagement.servlet.LogoutServlet</servlet-class>
     </servlet>
