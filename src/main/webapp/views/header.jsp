@@ -31,7 +31,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="${pageContext.request.contextPath}/views/register.jsp">Register</a>
+            <a class="nav-link nav-user px-3 btn btn-one mt-3 mt-lg-0 ms-4 ms-lg-0" href="<%= request.getContextPath() %>/jobTitle">Register</a>
           </li>
         </ul>
       <% } %>
@@ -45,7 +45,7 @@
                 <%= session.getAttribute("username") %>
               </a>
             <div class="dropdown-menu dropdown-menu-center ms-4 ms-lg-0">
-                <span class="block text-sm text-gray-900 ms-4"><%= session.getAttribute("username") %></span>
+                <span class="block text-sm text-gray-900 ms-4"><%= session.getAttribute("jobTitle") %></span>
               <hr>
               <a class="dropdown-item" href="<%= request.getContextPath() %>/views/dashboard.jsp">Dashboard</a>
               <a class="dropdown-item" href="<%= request.getContextPath() %>/editProfile">

@@ -1,6 +1,7 @@
 package com.example.companymanagement.servlet;
 
-import com.example.companymanagement.model.Employee;
+import com.example.companymanagement.entity.Employee;
+import com.example.companymanagement.entity.JobTitle;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -33,7 +34,8 @@ public class LoginServlet extends HttpServlet {
             Employee employee = employees.get(0);
             if (employee.getPassword().equals(password)) {
                 request.getSession().setAttribute("username", employee.getFullName());
-                request.getSession().setAttribute("email", email);
+                JobTitle jobTitle = employee.getJobTitle();
+                request.getSession().setAttribute("jobTitle", jobTitle.getTitle_name());
                 response.sendRedirect(request.getContextPath() + "/index.jsp");
             } else {
                 response.sendRedirect(request.getContextPath() + "/views/login.jsp");
