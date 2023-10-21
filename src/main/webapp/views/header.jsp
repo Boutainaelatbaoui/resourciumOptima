@@ -47,7 +47,7 @@
             <div class="dropdown-menu dropdown-menu-center ms-4 ms-lg-0">
                 <span class="block text-sm text-gray-900 ms-4"><%= session.getAttribute("jobTitle") %></span>
               <hr>
-              <a class="dropdown-item" href="<%= request.getContextPath() %>/views/dashboard.jsp">Dashboard</a>
+              <a class="dropdown-item" href="<%= request.getContextPath() %>/dashboard">Dashboard</a>
               <a class="dropdown-item" href="<%= request.getContextPath() %>/editProfile">
                 Edit Profile
               </a>
