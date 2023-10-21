@@ -188,14 +188,14 @@ body{
     position: absolute;
     width: 55%;
     height: 200%;
-    background-color: #ced8d9;
+    background-color: #eeeeee !important;
     transform: skewX(43deg);
 }
 
 .btn-modal{
-    background-color: #0c2b3c !important;
+    background-color: #266ef5 !important;
     border-radius: 10px !important;
-    color: #ced8d9 !important;
+    color: #eeeeee !important;
 }
 
 .btn-two{
