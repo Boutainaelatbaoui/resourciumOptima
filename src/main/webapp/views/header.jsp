@@ -41,7 +41,7 @@
         <ul class="navbar-nav d-flex ms-auto">
           <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link nav-dash dropdown-toggle nav-user btn btn-two me-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle me-1" src="assets/img/A%20female%20office.png" alt="user photo" width="45" height="45">
+                <img class="rounded-circle me-1" src="${pageContext.request.contextPath}/assets/img/A%20female%20office.png" alt="user photo" width="45" height="45">
                 <%= session.getAttribute("username") %>
               </a>
             <div class="dropdown-menu dropdown-menu-center ms-4 ms-lg-0">

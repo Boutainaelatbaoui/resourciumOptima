@@ -54,10 +54,12 @@
                         <img class="mb-3 rounded-circle shadow-lg" src="./assets/img/A%20female%20office.png" width="100" height="100" alt="image">
                         <h5 class="mb-1 text-xl font-medium"><%= employee.getFullName() %></h5>
                         <span class="text-sm text-muted"><%= (jobTitle != null) ? jobTitle.getTitle_name() : "N/A" %></span>
-                        <div class="mt-4">
-                            <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm"><i class="bi bi-pencil-square users-icon text-white me-2"></i>Update</a>
-                            <a href="#" class="btn btn-sm btn-danger px-4 text-sm"><i class="bi bi-trash3 users-icon text-white me-2"></i>Delete</a>
-                        </div>
+                        <% if ("Manager".equals(jobTitle)) {%>
+                            <div class="mt-4">
+                                <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm"><i class="bi bi-pencil-square users-icon text-white me-2"></i>Update</a>
+                                <a href="#" class="btn btn-sm btn-danger px-4 text-sm"><i class="bi bi-trash3 users-icon text-white me-2"></i>Delete</a>
+                            </div>
+                        <%}%>
                     </div>
                 </div>
             </div>
