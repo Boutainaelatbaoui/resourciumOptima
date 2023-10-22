@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/views/equipment.jsp" class="nav-link active mt-2">
+                    <a href="${pageContext.request.contextPath}/equipment/list" class="nav-link active mt-2">
                         <span class="me-4"><i class="bi bi-grid-1x2-fill"></i></span>
                         <span>Equipment</span>
                     </a>

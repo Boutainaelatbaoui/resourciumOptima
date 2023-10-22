@@ -98,12 +98,6 @@ body{
     color: #1f202b !important;
 }
 
-.home-textone{
-    font-family: 'Kaushan Script', cursive;
-    font-family: 'Cookie', cursive;
-    font-size: 68px !important;
-}
-
 .home-subtext{
     font-family: 'Playball', cursive;
 }
@@ -173,7 +167,7 @@ body{
 }
 
 .welcome-card {
-    background-color: #eeeeee !important ;
+    background-color: white !important ;
 }
 
 .bx-shadow{
@@ -188,7 +182,7 @@ body{
     position: absolute;
     width: 55%;
     height: 200%;
-    background-color: #eeeeee !important;
+    background-color: #ced8d9 !important;
     transform: skewX(43deg);
 }
 
