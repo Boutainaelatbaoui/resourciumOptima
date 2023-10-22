@@ -42,6 +42,7 @@
   <div class="main-dash">
     <%
       String successMessage = (String) request.getSession().getAttribute("successMessage");
+      String jobTitle = (String) session.getAttribute("jobTitle");
     %>
     <% if (successMessage != null) { %>
     <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
@@ -62,10 +63,12 @@
         <div class="card-text mb-4">
           <h4 class="mt-1 fw-bolder">Welcome back <i class="bi bi-quote"></i><%= session.getAttribute("username") %><i class="bi bi-quote"></i> <span>&#128075;</span></h4>
         </div>
-        <a href="${pageContext.request.contextPath}/create-equi" class="btn btn-modal">Add New Equipment</a>
+        <% if ("Manager".equals(jobTitle)) {%>
+          <a href="${pageContext.request.contextPath}/create-equi" class="btn btn-modal">Add New Equipment</a>
+        <%}%>
       </div>
     </div>
-    <h1 class="fw-bold text-center mt-4">Equipments</h1>
+    <h2 class="fw-bold text-center mt-5">Equipments</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-5">
       <%
         List<Equipment> equipments = (List<Equipment>) request.getAttribute("equipments");
@@ -77,7 +80,7 @@
       <div class="col">
         <div class="card card-menu btn bg-white mb-3 p-0" style="background-color: white !important;">
           <div class="card-body">
-            <div class="d-flex justify-content-center gap-2 align-items-center">
+            <div class="d-flex justify-content-center gap-4 align-items-center mb-2">
               <% if (equipmentCategory.getCategory_id() == 1) { %>
               <img class="mb-3" src="${pageContext.request.contextPath}/assets/img/Workstation.png" width="80" height="80" alt="image">
               <% } else if (equipmentCategory.getCategory_id() == 2) { %>
@@ -101,8 +104,18 @@
             <span class="fw-bolder fs-6 me-1 mb-2">Date of maintenance:</span><h6 class="mb-1 text-xl font-medium"><%= equipment.getDate_of_maintenance() %></h6>
             <span class="fw-bolder fs-6 me-1 mb-2">Date of purchase:</span><h6 class="mb-1 text-xl font-medium"><%= equipment.getDate_of_purchase() %></h6>
             <div class="mt-4">
-              <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm"><i class="bi bi-pencil-square users-icon text-white me-2"></i>Update</a>
-              <a href="#" class="btn btn-sm btn-danger px-4 text-sm"><i class="bi bi-trash3 users-icon text-white me-2"></i>Delete</a>
+              <% if ("Manager".equals(jobTitle)) { %>
+              <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm">
+                <i class="bi bi-pencil-square users-icon text-white me-2"></i>Update
+              </a>
+              <a href="#" class="btn btn-sm btn-danger px-4 text-sm">
+                <i class="bi bi-trash3 users-icon text-white me-2"></i>Delete
+              </a>
+              <% } else { %>
+              <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm">
+                <i class="bi bi-pencil-square users-icon text-white me-2"></i>Reserve
+              </a>
+              <% } %>
             </div>
           </div>
         </div>
