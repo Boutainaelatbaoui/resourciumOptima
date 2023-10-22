@@ -15,13 +15,23 @@ public class EquipmentRepository {
         entityManagerFactory= Persistence.createEntityManagerFactory("default");
     }
 
-    public List<EquipmentCategory> AllEquipmentCateg() {
+    public List<Equipment> AllEquipment() {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         try {
-            TypedQuery<EquipmentCategory> query = entityManager.createQuery("SELECT e FROM EquipmentCategory e", EquipmentCategory.class);
+            TypedQuery<Equipment> query = entityManager.createQuery("SELECT e FROM Equipment e", Equipment.class);
             return query.getResultList();
         } finally {
             entityManager.close();
         }
+    }
+
+    public void save(Equipment equipment){
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(equipment);
+        entityManager.getTransaction().commit();
+
+        entityManager.close();
     }
 }

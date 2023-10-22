@@ -11,8 +11,10 @@ public class EquipmentCategoryService {
     public EquipmentCategoryService() {
         equipmentCategoryRepository = new EquipmentCategoryRepository();
     }
-
     public List<EquipmentCategory> getAllEquiCategory() {
         return equipmentCategoryRepository.AllEquipmentCateg();
+    }
+    public EquipmentCategory getCategoryById(int categoryId) {
+        return equipmentCategoryRepository.findById(categoryId);
     }
 }

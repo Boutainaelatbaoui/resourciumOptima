@@ -24,4 +24,13 @@ public class EquipmentCategoryRepository {
             entityManager.close();
         }
     }
+    public EquipmentCategory findById(int categoryId) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            return entityManager.find(EquipmentCategory.class, categoryId);
+        } finally {
+            entityManager.close();
+        }
+    }
+
 }
