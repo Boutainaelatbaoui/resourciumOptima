@@ -41,36 +41,37 @@
         <div id="modal-equipment">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="/add-equipment" method="POST" enctype="multipart/form-data" id="form-equipment">
+                    <form action="${pageContext.request.contextPath}/equipment/create" method="POST" id="form-equipment">
                         <div class="modal-header">
                             <h5 class="modal-title fw-bold">Add New Equipment</h5>
                         </div>
                         <div class="modal-body">
+                            <input type="hidden" name="action" value="create">
                             <div class="row mb-3">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" name="equipment_name" id="equipment-name"/>
+                                    <input type="text" class="form-control" name="name" id="equipment-name"/>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Cost</label>
-                                    <input type="number" class="form-control" name="equipment_cost" step=".01" id="equipment-cost"/>
+                                    <input type="number" class="form-control" name="cost" step=".01" id="equipment-cost"/>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Quantity</label>
-                                <input type="number" class="form-control" name="equipment_quantity" id="equipment-quantity"/>
+                                <input type="number" class="form-control" name="quantity" id="equipment-quantity"/>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Date of Purchase</label>
-                                <input type="date" class="form-control" name="equipment_date_of_purchase" id="equipment-date-of-purchase"/>
+                                <input type="date" class="form-control" name="purchase" id="equipment-date-of-purchase"/>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Date of Maintenance</label>
-                                <input type="date" class="form-control" name="equipment_date_of_maintenance" id="equipment-date-of-maintenance"/>
+                                <input type="date" class="form-control" name="maintenance" id="equipment-date-of-maintenance"/>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Category</label>
-                                <select class="form-select" name="equipment_category" id="equipment-category">
+                                <select class="form-select" name="category" id="equipment-category">
                                     <option value="">Please select</option>
                                     <% List<EquipmentCategory> equipmentCategories = (List<EquipmentCategory>) request.getAttribute("equipmentCategories");
                                         for (EquipmentCategory equipmentCategory : equipmentCategories) { %>

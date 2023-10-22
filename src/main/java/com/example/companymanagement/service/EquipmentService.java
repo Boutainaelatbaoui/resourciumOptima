@@ -1,6 +1,6 @@
 package com.example.companymanagement.service;
 
-import com.example.companymanagement.entity.EquipmentCategory;
+import com.example.companymanagement.entity.*;
 import com.example.companymanagement.repository.*;
 
 import java.util.List;
@@ -12,7 +12,12 @@ public class EquipmentService {
         equipmentRepository = new EquipmentRepository();
     }
 
-    public List<EquipmentCategory> getAllEquiCategory() {
-        return equipmentRepository.AllEquipmentCateg();
+    public List<Equipment> getAllEquipment() {
+        return equipmentRepository.AllEquipment();
     }
+    public Equipment saveEquipment(Equipment equipment) {
+        equipmentRepository.save(equipment);
+        return equipment;
+    }
+
 }
