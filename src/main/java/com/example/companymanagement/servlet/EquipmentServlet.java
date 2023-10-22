@@ -30,7 +30,7 @@ public class EquipmentServlet extends HttpServlet {
 
         request.setAttribute("equipments", equipments);
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/equipment.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -61,7 +61,9 @@ public class EquipmentServlet extends HttpServlet {
             newEquipment.setEquipmentCategory(category);
 
             equipmentService.saveEquipment(newEquipment);
-            response.sendRedirect(request.getContextPath() + "/views/equipment.jsp");
+
+            request.getSession().setAttribute("successMessage", "Equipment registered successfully.");
+            response.sendRedirect(request.getContextPath() + "/equipment/list");
         }
     }
 }

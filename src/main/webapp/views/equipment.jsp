@@ -1,3 +1,7 @@
+<%@ page import="com.example.companymanagement.entity.Equipment" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.companymanagement.service.EquipmentCategoryService" %>
+<%@ page import="com.example.companymanagement.entity.EquipmentCategory" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +40,15 @@
 <jsp:include page="dashSide.jsp" />
 <main class="mt-3 mb-5">
   <div class="main-dash">
+    <%
+      String successMessage = (String) request.getSession().getAttribute("successMessage");
+    %>
+    <% if (successMessage != null) { %>
+    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+      <strong>Success!</strong> <%= successMessage %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
     <div class="card welcome-card text-center bx-shadow">
       <div class="card-style"></div>
       <div class="card-body box-card">
@@ -52,10 +65,64 @@
         <a href="${pageContext.request.contextPath}/create-equi" class="btn btn-modal">Add New Equipment</a>
       </div>
     </div>
+    <h1 class="fw-bold text-center mt-4">Equipments</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-5">
+      <%
+        List<Equipment> equipments = (List<Equipment>) request.getAttribute("equipments");
+
+        if (equipments != null && !equipments.isEmpty()) {
+          for (Equipment equipment : equipments) {
+            EquipmentCategory equipmentCategory = equipment.getEquipmentCategory();
+      %>
+      <div class="col">
+        <div class="card card-menu btn bg-white mb-3 p-0" style="background-color: white !important;">
+          <div class="card-body">
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <% if (equipmentCategory.getCategory_id() == 1) { %>
+              <img class="mb-3" src="${pageContext.request.contextPath}/assets/img/Workstation.png" width="80" height="80" alt="image">
+              <% } else if (equipmentCategory.getCategory_id() == 2) { %>
+              <img class="mb-3" src="${pageContext.request.contextPath}/assets/img/Sliding%20Door%20Closet.png" width="80" height="80" alt="image">
+              <% } else if (equipmentCategory.getCategory_id() == 3) { %>
+              <img class="mb-3" src="${pageContext.request.contextPath}/assets/img/Cab%20Stand.png" width="80" height="80" alt="image">
+              <% } else if (equipmentCategory.getCategory_id() == 4) { %>
+              <img class="mb-3" src="${pageContext.request.contextPath}/assets/img/Gear.png" width="80" height="80" alt="image">
+              <% } else { %>
+              <img class="mb-3" src="${pageContext.request.contextPath}/assets/img/Tools.png" width="80" height="80" alt="image">
+              <% } %>
+              <div>
+                <h5 class="mb-1 text-xl font-medium text-center"><%= equipment.getName() %></h5>
+                <span class="text-sm fs-6 text-muted text-center"><%= (equipmentCategory != null) ? equipmentCategory.getName() : "N/A" %></span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center gap-4 mb-2 mt-3">
+              <h6 class="text-xl font-medium"><span class="fw-bolder fs-6 me-1">Quantity:</span><%= equipment.getQuantity() %></h6>
+              <h6 class="text-xl font-medium"><span class="fw-bolder fs-6 me-1">cost:</span><%= equipment.getCost() %></h6>
+            </div>
+            <span class="fw-bolder fs-6 me-1 mb-2">Date of maintenance:</span><h6 class="mb-1 text-xl font-medium"><%= equipment.getDate_of_maintenance() %></h6>
+            <span class="fw-bolder fs-6 me-1 mb-2">Date of purchase:</span><h6 class="mb-1 text-xl font-medium"><%= equipment.getDate_of_purchase() %></h6>
+            <div class="mt-4">
+              <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm"><i class="bi bi-pencil-square users-icon text-white me-2"></i>Update</a>
+              <a href="#" class="btn btn-sm btn-danger px-4 text-sm"><i class="bi bi-trash3 users-icon text-white me-2"></i>Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%
+        }
+      } else {
+      %>
+      <div class="col">
+        <div class="card bg-light">
+          <div class="card-body text-center">
+            <p>No Equipments to display.</p>
+          </div>
+        </div>
+      </div>
+      <%
+        }
+      %>
+    </div>
   </div>
 </main>
-
-
-
 </body>
 </html>
