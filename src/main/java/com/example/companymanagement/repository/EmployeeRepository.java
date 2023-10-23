@@ -1,6 +1,7 @@
 package com.example.companymanagement.repository;
 
 import com.example.companymanagement.entity.Employee;
+import com.example.companymanagement.entity.Equipment;
 import com.example.companymanagement.entity.JobTitle;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -25,4 +26,19 @@ public class EmployeeRepository {
             entityManager.close();
         }
     }
+
+    public void deleteEmployee(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Employee employee = entityManager.find(Employee.class, id);
+
+        if (employee != null && "Employee".equals(employee.getJobTitle().getTitle_name())) {
+            entityManager.getTransaction().begin();
+            employee.setJobTitle(null);
+            entityManager.remove(employee);
+            entityManager.getTransaction().commit();
+        }
+
+        entityManager.close();
+    }
+
 }
