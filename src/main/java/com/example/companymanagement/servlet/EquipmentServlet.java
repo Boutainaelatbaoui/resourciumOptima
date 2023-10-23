@@ -27,10 +27,16 @@ public class EquipmentServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        List<Equipment> equipments = equipmentService.getAllEquipment();
-        request.setAttribute("equipments", equipments);
-        request.getRequestDispatcher("/views/equipment.jsp").forward(request, response);
+        if ("delete".equals(action)) {
+            int equipmentId = Integer.parseInt(request.getParameter("id"));
+            equipmentService.deleteEquipment(equipmentId);
 
+            response.sendRedirect(request.getContextPath() + "/equipment/list");
+        } else {
+            List<Equipment> equipments = equipmentService.getAllEquipment();
+            request.setAttribute("equipments", equipments);
+            request.getRequestDispatcher("/views/equipment.jsp").forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

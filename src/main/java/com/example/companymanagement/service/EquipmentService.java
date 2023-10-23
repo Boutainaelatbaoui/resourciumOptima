@@ -20,4 +20,8 @@ public class EquipmentService {
         return equipment;
     }
 
+    public void deleteEquipment(int id) {
+        equipmentRepository.deleteEquipment(id);
+    }
+
 }

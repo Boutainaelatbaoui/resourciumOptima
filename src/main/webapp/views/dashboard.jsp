@@ -38,6 +38,9 @@
 <body class="d-flex flex-column min-vh-100">
 <jsp:include page="dashHeader.jsp" />
 <jsp:include page="dashSide.jsp" />
+<%
+    String jobTitle1 = (String) session.getAttribute("jobTitle");
+%>
 <main class="mt-3 mb-5">
     <div class="main-dash">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-5">
@@ -54,7 +57,7 @@
                         <img class="mb-3 rounded-circle shadow-lg" src="./assets/img/A%20female%20office.png" width="100" height="100" alt="image">
                         <h5 class="mb-1 text-xl font-medium"><%= employee.getFullName() %></h5>
                         <span class="text-sm text-muted"><%= (jobTitle != null) ? jobTitle.getTitle_name() : "N/A" %></span>
-                        <% if ("Manager".equals(jobTitle)) {%>
+                        <% if ("Manager".equals(jobTitle1)) {%>
                             <div class="mt-4">
                                 <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm"><i class="bi bi-pencil-square users-icon text-white me-2"></i>Update</a>
                                 <a href="#" class="btn btn-sm btn-danger px-4 text-sm"><i class="bi bi-trash3 users-icon text-white me-2"></i>Delete</a>
