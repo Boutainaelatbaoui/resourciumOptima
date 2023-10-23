@@ -108,7 +108,8 @@
               <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm">
                 <i class="bi bi-pencil-square users-icon text-white me-2"></i>Update
               </a>
-              <a href="#" class="btn btn-sm btn-danger px-4 text-sm">
+              <a href="${pageContext.request.contextPath}/equipment/list?action=delete&id=<%= equipment.getEquipment_id() %>"
+                 class="btn btn-sm btn-danger px-4 text-sm">
                 <i class="bi bi-trash3 users-icon text-white me-2"></i>Delete
               </a>
               <% } else { %>

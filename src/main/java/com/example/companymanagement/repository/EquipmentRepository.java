@@ -34,4 +34,22 @@ public class EquipmentRepository {
 
         entityManager.close();
     }
+
+    public void deleteEquipment(int id) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Equipment equipment = entityManager.find(Equipment.class, id);
+
+        if (equipment != null) {
+            entityManager.getTransaction().begin();
+
+            equipment.setEquipmentCategory(null);
+
+            entityManager.remove(equipment);
+
+            entityManager.getTransaction().commit();
+        }
+
+        entityManager.close();
+    }
+
 }
