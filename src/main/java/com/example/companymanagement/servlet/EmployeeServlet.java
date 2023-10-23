@@ -1,6 +1,7 @@
 package com.example.companymanagement.servlet;
 
 import com.example.companymanagement.entity.Employee;
+import com.example.companymanagement.entity.Equipment;
 import com.example.companymanagement.entity.JobTitle;
 import com.example.companymanagement.repository.EmployeeRepository;
 import com.example.companymanagement.service.EmployeeService;
@@ -24,11 +25,17 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Employee> employees = employeeService.getAllEmployee();
+        String action = request.getParameter("action");
+        if ("delete".equals(action)) {
+            int employeeId = Integer.parseInt(request.getParameter("id"));
+            employeeService.deleteEmployee(employeeId);
 
-        request.setAttribute("employees", employees);
-
-        request.getRequestDispatcher("views/dashboard.jsp").forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/dashboard");
+        } else {
+            List<Employee> employees = employeeService.getAllEmployee();
+            request.setAttribute("employees", employees);
+            request.getRequestDispatcher("views/dashboard.jsp").forward(request, response);
+        }
     }
 
 }

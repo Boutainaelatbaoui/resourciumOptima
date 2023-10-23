@@ -18,6 +18,9 @@ public class EmployeeService {
     public List<Employee> getAllEmployee() {
         return employeeRepository.AllEmployees();
     }
+    public void deleteEmployee(int id) {
+        employeeRepository.deleteEmployee(id);
+    }
 
 }
 
