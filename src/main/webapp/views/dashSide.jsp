@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<%= request.getContextPath() %>/dashboard" class="nav-link active mt-2">
+                    <a href="${pageContext.request.contextPath}/reservation?action=view" class="nav-link active mt-2">
                         <span class="me-4"><i class="bi bi-calendar-check"></i></span>
                         <span>Reservations</span>
                     </a>
