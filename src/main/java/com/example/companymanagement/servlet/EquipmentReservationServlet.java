@@ -28,18 +28,26 @@ public class EquipmentReservationServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String equipmentIdParam = request.getParameter("id");
-        if (equipmentIdParam != null) {
-            int equipmentId = Integer.parseInt(equipmentIdParam);
-
-            Equipment equipment = equipmentService.getEquipmentById(equipmentId);
-
-            if (equipment != null) {
-                request.setAttribute("equipment", equipment);
-                request.getRequestDispatcher("/views/updateEquipmentReservation.jsp").forward(request, response);
-            }
+        String action = request.getParameter("action");
+        if ("view".equals(action)) {
+            EquipmentReservationService reservationService = new EquipmentReservationService();
+            List<EquipmentReservation> allReservations = reservationService.getAllReservations();
+            request.setAttribute("allReservations", allReservations);
+            request.getRequestDispatcher("/views/reservation.jsp").forward(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + "/equipment/list");
+            String equipmentIdParam = request.getParameter("id");
+            if (equipmentIdParam != null) {
+                int equipmentId = Integer.parseInt(equipmentIdParam);
+
+                Equipment equipment = equipmentService.getEquipmentById(equipmentId);
+
+                if (equipment != null) {
+                    request.setAttribute("equipment", equipment);
+                    request.getRequestDispatcher("/views/updateEquipmentReservation.jsp").forward(request, response);
+                }
+            } else {
+                response.sendRedirect(request.getContextPath() + "/equipment/list");
+            }
         }
     }
 

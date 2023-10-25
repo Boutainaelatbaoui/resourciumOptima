@@ -23,4 +23,14 @@ public class EquipmentReservationRepository {
 
         entityManager.close();
     }
+
+    public List<EquipmentReservation> AllReservations() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            TypedQuery<EquipmentReservation> query = entityManager.createQuery("SELECT e FROM EquipmentReservation e", EquipmentReservation.class);
+            return query.getResultList();
+        } finally {
+            entityManager.close();
+        }
+    }
 }
