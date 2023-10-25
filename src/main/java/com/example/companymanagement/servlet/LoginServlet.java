@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
             Employee employee = employees.get(0);
             if (employee.getPassword().equals(password)) {
                 request.getSession().setAttribute("username", employee.getFullName());
+                request.getSession().setAttribute("employee", employee);
                 JobTitle jobTitle = employee.getJobTitle();
                 request.getSession().setAttribute("jobTitle", jobTitle.getTitle_name());
                 response.sendRedirect(request.getContextPath() + "/index.jsp");

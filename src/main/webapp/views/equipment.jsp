@@ -112,12 +112,13 @@
                  class="btn btn-sm btn-danger px-4 text-sm">
                 <i class="bi bi-trash3 users-icon text-white me-2"></i>Delete
               </a>
-              <% } else { %>
-              <a href="#" class="btn btn-sm btn-primary me-3 px-4 text-sm">
+              <% }%>
+            </div>
+            <button type="button" class="btn btn-sm btn-primary me-3 mt-3 px-4 text-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <a href="${pageContext.request.contextPath}/reservation?id=<%= equipment.getEquipment_id() %>" class="text-decoration-none text-white">
                 <i class="bi bi-pencil-square users-icon text-white me-2"></i>Reserve
               </a>
-              <% } %>
-            </div>
+            </button>
           </div>
         </div>
       </div>
