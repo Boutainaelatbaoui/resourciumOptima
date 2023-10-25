@@ -65,9 +65,13 @@ public class RegistrationServlet extends HttpServlet {
         entityManager.getTransaction().commit();
 
         request.getSession().removeAttribute("error");
+        request.getSession().setAttribute("username", newUser.getFullName());
+        request.getSession().setAttribute("employee", newUser);
+        jobTitle = newUser.getJobTitle();
+        request.getSession().setAttribute("jobTitle", jobTitle.getTitle_name());
 
         request.getSession().setAttribute("successMessage", "Employee registered successfully.");
-        response.sendRedirect(request.getContextPath() + "/views/login.jsp");
+        response.sendRedirect(request.getContextPath() + "/index.jsp");
     }
 
     public void destroy() {

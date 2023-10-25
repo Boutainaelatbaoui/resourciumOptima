@@ -2,6 +2,7 @@ package com.example.companymanagement.entity;
 import com.example.companymanagement.entity.enums.StatusEquipment;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.*;
 
 @Entity
@@ -10,7 +11,10 @@ public class EquipmentReservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reservation_id;
     private Date reservation_date;
-    private StatusEquipment status;
+
+    private Date reservation_return;
+    @Enumerated(EnumType.STRING)
+    private StatusEquipment statusEquipment;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
@@ -36,14 +40,6 @@ public class EquipmentReservation {
         this.reservation_date = reservation_date;
     }
 
-    public StatusEquipment getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusEquipment status) {
-        this.status = status;
-    }
-
     public Employee getEmployee() {
         return employee;
     }
@@ -58,5 +54,21 @@ public class EquipmentReservation {
 
     public void setEquipment(Equipment equipment) {
         this.equipment = equipment;
+    }
+
+    public Date getReservation_return() {
+        return reservation_return;
+    }
+
+    public void setReservation_return(Date reservation_return) {
+        this.reservation_return = reservation_return;
+    }
+
+    public StatusEquipment getStatusEquipment() {
+        return statusEquipment;
+    }
+
+    public void setStatusEquipment(StatusEquipment statusEquipment) {
+        this.statusEquipment = statusEquipment;
     }
 }

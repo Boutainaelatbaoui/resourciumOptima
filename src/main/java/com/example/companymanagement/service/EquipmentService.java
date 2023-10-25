@@ -24,4 +24,9 @@ public class EquipmentService {
         equipmentRepository.deleteEquipment(id);
     }
 
+    public Equipment getEquipmentById(int equipmentId){
+        Equipment equipment = equipmentRepository.getEquipmentById(equipmentId);
+        return equipment;
+    }
+
 }

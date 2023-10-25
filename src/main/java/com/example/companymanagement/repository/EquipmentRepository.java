@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class EquipmentRepository {
@@ -34,7 +35,6 @@ public class EquipmentRepository {
 
         entityManager.close();
     }
-
     public void deleteEquipment(int id) {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         Equipment equipment = entityManager.find(Equipment.class, id);
@@ -50,6 +50,15 @@ public class EquipmentRepository {
         }
 
         entityManager.close();
+    }
+
+    public Equipment getEquipmentById(int equipmentId){
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            return entityManager.find(Equipment.class, equipmentId);
+        } finally {
+            entityManager.close();
+        }
     }
 
 }

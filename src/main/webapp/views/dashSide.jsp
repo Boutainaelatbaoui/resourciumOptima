@@ -20,17 +20,33 @@
                 </li>
                 <li>
                     <a href="${pageContext.request.contextPath}/equipment/list?action=equipmentAction" class="nav-link active mt-2">
+                        <span class="me-4"><i class="bi bi-tools"></i></span>
+                        <span>Equipments</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%= request.getContextPath() %>/dashboard" class="nav-link active mt-2">
+                        <span class="me-4"><i class="bi bi-calendar-check"></i></span>
+                        <span>Reservations</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%= request.getContextPath() %>/dashboard" class="nav-link active mt-2">
                         <span class="me-4"><i class="bi bi-grid-1x2-fill"></i></span>
-                        <span>Equipment</span>
+                        <span>Job Titles</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<%= request.getContextPath() %>/dashboard" class="nav-link active mt-2">
+                        <span class="me-4"><i class="bi bi-pin-fill"></i></span>
+                        <span>Categories</span>
                     </a>
                 </li>
                 <li class="position-absolute bottom-0 mb-5 ms-2 fw-bolder fs-6">
-                    <a class="text-white text-decoration-none" href=""
-                       onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                        <i class="bi bi-box-arrow-right me-4 fs-4"></i>
-                        Logout
-                    </a>
+                    <form action="<%= request.getContextPath() %>/logout" method="get">
+                        <input type="hidden" name="logout" value="true">
+                        <button type="submit" class="dropdown-item">Logout</button>
+                    </form>
                 </li>
             </ul>
         </nav>
