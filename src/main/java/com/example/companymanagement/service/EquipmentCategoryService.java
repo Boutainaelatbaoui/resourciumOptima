@@ -7,7 +7,9 @@ import java.util.List;
 
 public class EquipmentCategoryService {
     private final EquipmentCategoryRepository equipmentCategoryRepository;
-
+    public EquipmentCategoryService(EquipmentCategoryRepository equipmentCategoryRepository) {
+        this.equipmentCategoryRepository = equipmentCategoryRepository;
+    }
     public EquipmentCategoryService() {
         equipmentCategoryRepository = new EquipmentCategoryRepository();
     }

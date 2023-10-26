@@ -13,9 +13,6 @@ public class JobTitle {
     @OneToMany(mappedBy = "jobTitle")
     private List<Employee> employees;
 
-    public JobTitle() {
-    }
-
     public List<Employee> getEmployees() {
         return employees;
     }
