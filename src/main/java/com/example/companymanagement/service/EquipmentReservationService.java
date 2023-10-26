@@ -8,7 +8,9 @@ import java.util.List;
 
 public class EquipmentReservationService {
     private final EquipmentReservationRepository equipmentReservationRepository;
-
+    public EquipmentReservationService(EquipmentReservationRepository equipmentReservationRepository) {
+        this.equipmentReservationRepository = equipmentReservationRepository;
+    }
     public EquipmentReservationService() {
         equipmentReservationRepository = new EquipmentReservationRepository();
     }

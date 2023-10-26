@@ -11,11 +11,15 @@ import java.util.List;
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
-    public EmployeeService() {
+    public EmployeeService(EmployeeRepository employeeRepository) {
+       this.employeeRepository = employeeRepository;
+    }
+
+    public EmployeeService( ) {
         employeeRepository = new EmployeeRepository();
     }
 
-    public List<Employee> getAllEmployee() {
+    public List<Employee> getAllEmployees() {
         return employeeRepository.AllEmployees();
     }
     public void deleteEmployee(int id) {
