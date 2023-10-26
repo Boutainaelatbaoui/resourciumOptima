@@ -52,7 +52,7 @@ public class EmployeeServiceTest {
 
         when(employeeRepository.AllEmployees()).thenReturn(expectedEmployees);
 
-        List<Employee> result = employeeService.getAllEmployee();
+        List<Employee> result = employeeService.getAllEmployees();
 
         assertEquals(expectedEmployees, result);
     }

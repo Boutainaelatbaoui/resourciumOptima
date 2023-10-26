@@ -23,7 +23,7 @@ class EquipmentCategoryServiceTest {
     }
 
     @Test
-    public void test_returns_all_equipment_categories_when_repository_has_data() {
+    public void test_returns_all_equipment_categories() {
         EquipmentCategoryRepository mockRepository = mock(EquipmentCategoryRepository.class);
         List<EquipmentCategory> expectedCategories = new ArrayList<>();
         expectedCategories.add(new EquipmentCategory());
@@ -33,6 +33,34 @@ class EquipmentCategoryServiceTest {
         List<EquipmentCategory> result = equipmentCategoryService.getAllEquiCategory();
 
         assertEquals(expectedCategories, result);
+    }
+
+    @Test
+    public void test_returns_null_when_query_result_is_null() {
+        when(equipmentCategoryRepository.AllEquipmentCateg()).thenReturn(null);
+
+        List<EquipmentCategory> result = equipmentCategoryService.getAllEquiCategory();
+
+        assertNull(result);
+    }
+
+    @Test
+    public void test_returns_equipment_category_with_given_category_id() {
+        int categoryId = 1;
+
+        EquipmentCategory result = new EquipmentCategoryService().getCategoryById(categoryId);
+
+        assertNotNull(result);
+        assertEquals(categoryId, result.getCategory_id());
+    }
+
+    @Test
+    public void test_returns_null_if_no_equipment_category_found_with_given_category_id() {
+        int categoryId = 100;
+
+        EquipmentCategory result = new EquipmentCategoryService().getCategoryById(categoryId);
+
+        assertNull(result);
     }
 
 }

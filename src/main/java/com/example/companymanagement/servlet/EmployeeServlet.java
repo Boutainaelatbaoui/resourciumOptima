@@ -32,7 +32,7 @@ public class EmployeeServlet extends HttpServlet {
 
             response.sendRedirect(request.getContextPath() + "/dashboard");
         } else {
-            List<Employee> employees = employeeService.getAllEmployee();
+            List<Employee> employees = employeeService.getAllEmployees();
             request.setAttribute("employees", employees);
             request.getRequestDispatcher("views/dashboard.jsp").forward(request, response);
         }

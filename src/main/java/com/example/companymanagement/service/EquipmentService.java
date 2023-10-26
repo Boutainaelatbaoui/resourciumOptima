@@ -11,6 +11,9 @@ public class EquipmentService {
     public EquipmentService() {
         equipmentRepository = new EquipmentRepository();
     }
+    public EquipmentService(EquipmentRepository equipmentRepository) {
+        this.equipmentRepository = equipmentRepository;
+    }
 
     public List<Equipment> getAllEquipment() {
         return equipmentRepository.AllEquipment();

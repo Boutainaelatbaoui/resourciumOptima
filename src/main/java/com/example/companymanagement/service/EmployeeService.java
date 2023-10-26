@@ -19,7 +19,7 @@ public class EmployeeService {
         employeeRepository = new EmployeeRepository();
     }
 
-    public List<Employee> getAllEmployee() {
+    public List<Employee> getAllEmployees() {
         return employeeRepository.AllEmployees();
     }
     public void deleteEmployee(int id) {
