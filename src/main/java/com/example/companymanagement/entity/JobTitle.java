@@ -13,6 +13,15 @@ public class JobTitle {
     @OneToMany(mappedBy = "jobTitle")
     private List<Employee> employees;
 
+    public JobTitle() {
+
+    }
+
+    public JobTitle(int title_id, String title_name) {
+        this.title_id = title_id;
+        this.title_name = title_name;
+    }
+
     public List<Employee> getEmployees() {
         return employees;
     }

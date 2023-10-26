@@ -13,6 +13,9 @@ public class JobTitleService {
     public JobTitleService() {
         jobTitleRepository = new JobTitleRepository();
     }
+    public JobTitleService(JobTitleRepository jobTitleRepository) {
+        this.jobTitleRepository = jobTitleRepository;
+    }
 
     public List<JobTitle> getAllJobTitles() {
         return jobTitleRepository.AllJobTitles();
