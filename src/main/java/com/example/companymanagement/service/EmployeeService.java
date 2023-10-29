@@ -1,6 +1,7 @@
 package com.example.companymanagement.service;
 
 import com.example.companymanagement.entity.Employee;
+import com.example.companymanagement.entity.Equipment;
 import com.example.companymanagement.entity.JobTitle;
 import com.example.companymanagement.repository.EmployeeRepository;
 import com.example.companymanagement.repository.JobTitleRepository;
@@ -24,6 +25,10 @@ public class EmployeeService {
     }
     public void deleteEmployee(int id) {
         employeeRepository.deleteEmployee(id);
+    }
+    public Employee getEmployeeById(int employeeId){
+        Employee employee = employeeRepository.getEmployeeById(employeeId);
+        return employee;
     }
 
 }

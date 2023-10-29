@@ -44,4 +44,13 @@ public class EmployeeRepository {
         entityManager.close();
     }
 
+    public Employee getEmployeeById(int employeeId){
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try {
+            return entityManager.find(Employee.class, employeeId);
+        } finally {
+            entityManager.close();
+        }
+    }
+
 }

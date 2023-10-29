@@ -43,7 +43,7 @@ public class EmployeeServiceTest {
         jobTitle1.setTitle_id(2);
         jobTitle1.setTitle_name("Employee");
         employee1.setId(2L);
-        employee1.setFullName("Nouhaila");
+        employee1.setFullName("noha");
         employee1.setEmail("nouhaila@gmail.com");
         employee1.setPassword("12345678");
         employee1.setJobTitle(jobTitle);
@@ -65,4 +65,6 @@ public class EmployeeServiceTest {
 
         verify(employeeRepository, times(1)).deleteEmployee(employeeId);
     }
+
+
 }

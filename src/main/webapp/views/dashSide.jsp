@@ -42,6 +42,12 @@
                         <span>Categories</span>
                     </a>
                 </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/task/list" class="nav-link active mt-2">
+                        <span class="me-4"><i class="bi bi-calendar-check"></i></span>
+                        <span>Tasks</span>
+                    </a>
+                </li>
                 <li class="position-absolute bottom-0 mb-5 ms-2 fw-bolder fs-6">
                     <form action="<%= request.getContextPath() %>/logout" method="get">
                         <input type="hidden" name="logout" value="true">
