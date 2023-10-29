@@ -30,7 +30,6 @@ public class EquipmentServlet extends HttpServlet {
         if ("delete".equals(action)) {
             int equipmentId = Integer.parseInt(request.getParameter("id"));
             equipmentService.deleteEquipment(equipmentId);
-
             response.sendRedirect(request.getContextPath() + "/equipment/list");
         } else {
             List<Equipment> equipments = equipmentService.getAllEquipment();
