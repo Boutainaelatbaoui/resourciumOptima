@@ -19,6 +19,17 @@ public class Equipment {
     @JoinColumn(name = "category_id")
     private EquipmentCategory equipmentCategory;
 
+    @OneToMany(mappedBy = "equipment", cascade = CascadeType.REMOVE)
+    private List<EquipmentReservation> equipmentReservations;
+
+    public List<EquipmentReservation> getEquipmentReservations() {
+        return equipmentReservations;
+    }
+
+    public void setEquipmentReservations(List<EquipmentReservation> equipmentReservations) {
+        this.equipmentReservations = equipmentReservations;
+    }
+
     public EquipmentCategory getEquipmentCategory() {
         return equipmentCategory;
     }

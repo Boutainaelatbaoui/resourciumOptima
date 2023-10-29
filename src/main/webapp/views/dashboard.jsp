@@ -43,7 +43,11 @@
 %>
 <main class="mt-3 mb-5">
     <div class="main-dash">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-5">
+        <div class="d-flex items-center mt-4">
+            <h2 class="me-4"><i class="bi bi-people-fill"></i></h2>
+            <h2>Employees</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 mt-4">
             <%
                 List<Employee> employees = (List<Employee>) request.getAttribute("employees");
 
